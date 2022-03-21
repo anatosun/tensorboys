@@ -1,1 +1,1 @@
-# mnist-mlp
+# Pattern Recognition on MNIST dataset
