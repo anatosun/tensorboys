@@ -105,4 +105,4 @@ xL is the number of convolutional layers, the simple is a traditional architectu
 And finally here is the impact of the epochs
 The test set was used as validation test during the training. Obviously it is bad if we want to compute the score over the test set at the end. But it is an easy trick to see the precision of the model on both the training and the test set after every epochs
 
-![cnn_epoch](https://github.com/fwicht/mnist-recognition/blob/main/img/mlp_epochs.png)
+![cnn_epoch](https://github.com/fwicht/mnist-recognition/blob/main/img/cnn_epochs.png)
