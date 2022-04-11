@@ -106,3 +106,25 @@ And finally here is the impact of the epochs
 The test set was used as validation test during the training. Obviously it is bad if we want to compute the score over the test set at the end. But it is an easy trick to see the precision of the model on both the training and the test set after every epochs
 
 ![cnn_epoch](https://github.com/fwicht/mnist-recognition/blob/main/img/cnn_epochs.png)
+
+## Permuted MNIST
+
+### MLP
+
+We can see that the result are almost exactly the same, there is a slight difference, but it is negligible.
+The same for the precision, we have both model scoring around 97.57%.
+
+It make total sense as theoretically, we could get the exact same performance for both dataset, by applying the same permutations to the weights of the first input layer, we could transfer our MLP trained on the classic MNIST do detect the permuted MNIST
+
+The MLP has no context, each pixel is treated separately without any relation to its neighboring pixels. Does not care about the pixel arrangement.
+
+![permuted_mlp](https://github.com/fwicht/mnist-recognition/blob/main/img/permuted_mlp.png)
+
+### CNN
+
+The CNN trained on the classic MNIST is close to 99.3% precision while the permuted one only reaches 97.1%. And we can specially see on the picture that it takes way longer to reach such a precision. 
+
+Again it makes sense, actually I'm even surprised by the result obtained with the CNN, I was expecting a lower score for the permuted one. The CNN search for "features" as "patches of pixels" with a local connection and a meaningful role -> pattern. In theory, CNN are translational invariant, but by shuffle the pixel, we actually mess this up. For example before it would find all the "straight lines", and then infer higher levels features from it. But with the shuffling, all lines position in different part of the images might have been permuted to different kind of pattern, not similar anymore. It surprisingly is able to find the permuted features quite well, as we can see, it reaches almost the same precision as the classic MLP above. But still far from the classic CNN 
+
+
+![permuted_cnn](https://github.com/fwicht/mnist-recognition/blob/main/img/permuted_cnn.png)
