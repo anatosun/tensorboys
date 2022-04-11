@@ -128,3 +128,16 @@ Again it makes sense, actually I'm even surprised by the result obtained with th
 
 
 ![permuted_cnn](https://github.com/fwicht/mnist-recognition/blob/main/img/permuted_cnn.png)
+
+### Transfering Weights
+
+As discussed above, we can play with the weights of the first layer of the MLP.
+
+Here we trained a MLP only the classic MNIST set, for the average 96.929% precision
+
+Then by recovering the weights of the first layer, applying the same permutation, and putting them back in the mode, we can test the model.
+
+On the permuted MNIST set, without ever seeing any permuted data during its training phase, it achieves the exact same precision of 96.929%, which is logical as the same pixel is going through the same (permuted) weights. 
+
+This could be useful if we don't know the permutation, and don't have enough data to train on the permuted datatset -> try to find the most likely permutation (at least for all the pixel not being blank on all pictures), train a model on the classic data set and permute at least the weights found above as part of the permutations. We could get probably quite good results
+
