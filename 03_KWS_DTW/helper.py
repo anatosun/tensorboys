@@ -23,7 +23,7 @@ class Slicer:
                     matches.append(os.path.join(root, filename))
         return matches
 
-    def __get_frame(self, image: cv2.Mat, image_number: str, path: Path, id: int, width=600, height=120, save=False) -> np.array:
+    def __get_frame(self, image: cv2.Mat, image_number: str, path: Path, id: int, width=600, height=120, save=False, savepath='./output') -> np.array:
         frame = paths2svg.big_bounding_box(path)
         frame = tuple(map(int, frame))
         document_crop = image[frame[2]:frame[3], frame[0]:frame[1]]
@@ -41,16 +41,16 @@ class Slicer:
         img = cv2.resize(src=img, dsize=(width, height),
                          interpolation=cv2.INTER_NEAREST)
         if save:
-            path = os.path.join("./output/", image_number)
+            path = os.path.join(savepath, image_number)
             if not os.path.exists(path):
                 os.makedirs(path)
             Image.fromarray(img > 0).save(os.path.join(path, f"{id}.png"))
 
         return np.asarray(img)
 
-    def get_frames(self, save=False) -> tuple:
+    def get_frames(self, save=False, savepath='./output') -> tuple:
         frames = np.array([self.__get_frame(image=document, image_number=os.path.splitext(os.path.basename(image))[
-            0], path=path, id=attribute['id'], save=save) for image, document, frame in zip(self.images, self.documents, self.frames) for path, attribute in zip(*svg2paths(frame))])
+            0], path=path, id=attribute['id'], save=save, savepath=savepath) for image, document, frame in zip(self.images, self.documents, self.frames) for path, attribute in zip(*svg2paths(frame))])
         ids = np.array([attribute['id'] for _, frame in zip(
             self.images, self.frames) for _, attribute in zip(*svg2paths(frame))])
         return frames, ids
@@ -58,7 +58,7 @@ class Slicer:
 
 def main():
     frames, ids = Slicer(images=("./data/images", ".jpg"),
-                         frames=("./data/ground-truth/locations", ".svg")).get_frames(save=True)
+                         frames=("./data/ground-truth/locations", ".svg")).get_frames(save=True, savepath="./data/output/")
 
 
 if __name__ == "__main__":
