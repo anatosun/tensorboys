@@ -49,15 +49,15 @@ class Slicer:
         return np.asarray(img)
 
     def get_frames(self, save=False, savepath='./output') -> tuple:
-        frames = np.array([self.__get_frame(image=document, image_number=os.path.splitext(os.path.basename(image))[
-            0], path=path, id=attribute['id'], save=save, savepath=savepath) for image, document, frame in zip(self.images, self.documents, self.frames) for path, attribute in zip(*svg2paths(frame))])
         ids = np.array([attribute['id'] for _, frame in zip(
             self.images, self.frames) for _, attribute in zip(*svg2paths(frame))])
-        return frames, ids
+        frames = np.array([self.__get_frame(image=document, image_number=os.path.splitext(os.path.basename(image))[
+            0], path=path, id=attribute['id'], save=save, savepath=savepath) for image, document, frame in zip(self.images, self.documents, self.frames) for path, attribute in zip(*svg2paths(frame))])
+        return ids, frames
 
 
 def main():
-    frames, ids = Slicer(images=("./data/images", ".jpg"),
+    ids, frames = Slicer(images=("./data/images", ".jpg"),
                          frames=("./data/ground-truth/locations", ".svg")).get_frames(save=True, savepath="./data/output/")
 
 
