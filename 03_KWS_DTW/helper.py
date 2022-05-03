@@ -17,7 +17,7 @@ class Slicer:
 
     def __fileList(self, path: str, ext: str) -> list:
         matches = []
-        for root, _, filenames in os.walk(path):
+        for root, _, filenames in os.walk(os.path.join(path)):
             for filename in filenames:
                 if filename.endswith((ext)):
                     matches.append(os.path.join(root, filename))
