@@ -18,6 +18,7 @@ class Slicer:
         self.frames = self.__fileList(frames[0], frames[1])
         assert(len(self.images) == len(self.frames)
                ), f"Number of images {len(self.images)} and frames {len(self.frames)} must be equal"
+        assert(len(self.frames) != 0), f"No images nor frames found"
         self.documents = [cv2.imread(image, cv2.IMREAD_GRAYSCALE)
                           for image in self.images]
 
