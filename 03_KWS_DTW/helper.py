@@ -30,7 +30,7 @@ class Slicer:
                     matches.append(os.path.join(root, filename))
         return matches
 
-    def __get_frame(self, image: cv2.Mat, image_number: str, path: Path, id: int, width=600, height=120, save=False, savepath='./output') -> np.array:
+    def __get_frame(self, image, image_number: str, path: Path, id: int, width=600, height=120, save=False, savepath='./output') -> np.array:
         frame = paths2svg.big_bounding_box(path)
         frame = tuple(map(int, frame))
         document_crop = image[frame[2]:frame[3], frame[0]:frame[1]]
