@@ -51,7 +51,8 @@ class Slicer:
             path = os.path.join(savepath, image_number)
             if not os.path.exists(path):
                 os.makedirs(path)
-            Image.fromarray(img > 0).save(os.path.join(path, f"{id}.png"))
+            Image.fromarray(img > 0).save(
+                os.path.join(path, f"{id}.png"))
 
         return np.asarray(img)
 
