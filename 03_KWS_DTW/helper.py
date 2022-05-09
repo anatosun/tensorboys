@@ -9,7 +9,6 @@ from scipy.spatial.distance import cdist
 from pyts.metrics import dtw
 
 
-############################ FX Start ##################################################
 # getting the sliced images with the corresponding label from the initial image and the svg
 
 class Slicer:
@@ -68,17 +67,6 @@ def main():
     ids, frames = Slicer(images=("./data/images", ".jpg"),
                          frames=("./data/ground-truth/locations", ".svg")).get_frames(save=True, savepath="./data/output/")
 
-# FX finish
-
-
-############################ Vincent Start ##################################################
-# Compute the dtw distance between 2 images
-
-# features:
-# We'll have a sliding 1 pixel band, so slice = 50 x 1
-
-# feature 1
-# lower contour
 
 def lower_contour(slice):
 
@@ -88,9 +76,6 @@ def lower_contour(slice):
         return 0
     else:
         return np.max(index)
-
-# feature 2
-# upper contour
 
 
 def upper_contour(slice):
@@ -102,9 +87,6 @@ def upper_contour(slice):
     else:
         return np.min(index)
 
-# feature 3
-# fraction of black pixel
-
 
 def fraction_black(slice):
 
@@ -114,9 +96,6 @@ def fraction_black(slice):
         return 0.0
     else:
         return number/len(slice)
-
-# feature 4
-# fraction of black pixel between the highest and lower contour
 
 
 def fraction_black_between(slice):
@@ -131,9 +110,6 @@ def fraction_black_between(slice):
         index_max = np.max(np.where(slice <= 0.5))
 
         return fraction_black(slice[index_min:index_max+1])
-
-# feature 5
-# number of black white transition
 
 
 def transition_black_white(slice):
@@ -181,8 +157,6 @@ def compute_dtw(image1, image2, windows_size=0.5, normalize=True):
                    method="sakoechiba", options={"window_size": windows_size})
 
     return dtw_cost
-
-# Vincent finish
 
 
 if __name__ == "__main__":
