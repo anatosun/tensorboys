@@ -11,10 +11,16 @@ Digit recognition on the MNIST dataset, with different approach
 - SVM
 - MLP
 - CNN
-- Test on permuted MNIST 
+- Test on permuted MNIST
 
 ### Project 3
 
 Keyword spotting in historical document
+
+Done with Dynamic Time Warping
+
+### Project 4
+
+Signature verification
 
 Done with Dynamic Time Warping
