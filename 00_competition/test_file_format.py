@@ -42,7 +42,7 @@ file structure: gxl filename, class (i, a)
 """
 
 #%% SETTINGS FOR CHALLENGE (YOU MAY CHANGE THIS TO THE EXERCISE TEST SETS FOR TESTING YOUR OUTPUTS)
-results_folder = 'example-results'  # 'path/to/result-folder'
+results_folder = '.'  # 'path/to/result-folder'
 # for mnist
 test_mnist_length = 10000
 # for kws
