@@ -64,8 +64,8 @@ class Slicer:
 
 
 def main():
-    ids, frames = Slicer(images=("./data/images", ".jpg"),
-                         frames=("./data/ground-truth/locations", ".svg")).get_frames(save=True, savepath="./data/output/")
+    ids, frames = Slicer(images=("./compet/images", ".jpg"),
+                         frames=("./compet/ground-truth/locations", ".svg")).get_frames(save=True, savepath="./compet/output/")
 
 
 def lower_contour(slice):
