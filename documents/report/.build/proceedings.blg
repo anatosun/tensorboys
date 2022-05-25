@@ -1,0 +1,15 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is '.build/proceedings.blg'
+[65] biber:340> INFO - === Wed May 25, 2022, 19:10:23
+[76] Biber.pm:418> INFO - Reading '.build/proceedings.bcf'
+[127] Biber.pm:969> INFO - Using all citekeys in bib section 0
+[137] Biber.pm:4383> INFO - Processing section 0
+[144] Biber.pm:4574> INFO - Looking for bibtex file 'references.bib' for section 0
+[149] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[149] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[149] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[149] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[149] bbl.pm:654> INFO - Writing '.build/proceedings.bbl' with encoding 'UTF-8'
+[150] bbl.pm:757> INFO - Output to .build/proceedings.bbl
+[150] Biber.pm:130> WARN - Data source 'references.bib' is empty, ignoring
+[150] Biber.pm:132> INFO - WARNINGS: 1
