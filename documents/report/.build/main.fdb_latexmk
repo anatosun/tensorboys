@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1653556103 "main.tex" ".build/main.pdf" "main" 1653556104
-  ".build/main.aux" 1653556103 686 e6bf9f11827e1eae1d85e75b99e0a183 "pdflatex"
+["pdflatex"] 1653556912 "main.tex" ".build/main.pdf" "main" 1653556913
+  ".build/main.aux" 1653556913 686 e6bf9f11827e1eae1d85e75b99e0a183 "pdflatex"
   ".build/main.out" 0 -1 0 "pdflatex"
   "/home/francois-xavierwicht/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1643101256 1345256 7ff15330f77e0cf9200407284e721dd2 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
@@ -125,7 +125,7 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1642711416 40136 b05acc85e8425979e52682d98a2bcacf ""
   "/usr/share/texlive/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1652993109 5128301 662df2de9687d308d9b26c9fd4f608da ""
   "homework.cls" 1653491730 5484 10b114b04b65e7f7ca4f0e4e7b17ab10 ""
-  "main.tex" 1653556101 1517 b376546a59e7db9045d08f9f4b1493d6 ""
+  "main.tex" 1653556910 2940 19f2e5f5231a67b8b942e646171d15e3 ""
   (generated)
   ".build/main.aux"
   ".build/main.log"
