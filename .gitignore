@@ -21,6 +21,33 @@ __pycache__/
 *.cb2
 *.mtc
 
+## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+## Build tool auxiliary files:
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+## Auxiliary and intermediate files from other packages:
+# algorithms
+*.alg
+*.loa
+
+# beamer
+*.nav
+*.pre
+*.snm
+*.vrb
+
 # Distribution / packaging
 .Python
 build/
