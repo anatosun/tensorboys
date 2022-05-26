@@ -6,6 +6,21 @@ __pycache__/
 # C extensions
 *.so
 
+#LATEX
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.mtc
+
 # Distribution / packaging
 .Python
 build/
